@@ -123,5 +123,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-LOGIN_URL = '/accounts/login/' #default login_url to redirect to if login_required
-LOGIN_REDIRECT_URL = '/' # default to redirect to after logout if next_page
+LOGIN_URL = '/accounts/login/' # login_url to redirect to if login_required (default = accounts/login)
+LOGIN_REDIRECT_URL = '/' # redirect to after logout if next not available (default = accounts/profile)

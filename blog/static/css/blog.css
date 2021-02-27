@@ -1,6 +1,15 @@
 .navfont {
   font-family: 'Libre Baskerville', serif;
-  margin-bottom: 10px;
+}
+
+.postcontent {
+  font-family: 'Dosis', sans-serif;
+}
+
+.welcome {
+  color: #e6dcdc;
+  text-align: right;
+  list-style-type: none;
 }
 
 .cat {

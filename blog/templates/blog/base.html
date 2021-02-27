@@ -11,7 +11,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Medium style editor -->
+    <!-- Medium style editor from https://github.com/yabwe/medium-editor -->
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
 
@@ -33,8 +33,9 @@
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -48,29 +49,32 @@
               </li>
           </ul>
 
-          <ul class="navbar navbar-expand-lg navbar-dark bg-dark navfont navbar-right">
+          <ul class="navbar navbar-nav welcome navbar-right">
             {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a>Welcome {{ user.username }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'logout' %}">Log out</a>
+                    <a class="nav-link" href="{% url 'logout' %}">Log out</a>
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a href="{% url 'login' %}">Login</a>
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
             {% endif %}
           </ul>
           
         </div>
+        
       </nav>
 
-    
       <div class="content container">
         {% block content %}
         {% endblock content %}
       </div>
+
+  <script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+
 
 </body>
 </html>

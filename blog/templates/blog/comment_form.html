@@ -1,2 +1,23 @@
 {% extends 'blog/base.html' %}
 
+{% block content %}
+<h1>Comment in these ugly boxes here</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <p>{{ form.author.errors }}</p>
+      <label for="{{ form.author.id_for_label }}">Author</label>
+      <input type="text" class="form-control" id="{{ form.author.id_for_label }}" name="author" placeholder="Text">
+    </div>
+    
+    <div class="form-group">
+        <p>{{ form.text.errors }}</p>
+        <label for="text">Text</label>
+        <input type="text" class="form-control" id="text" name="text" placeholder="Text">
+      </div>
+
+    <input class="btn btn-success" type="submit" value="Comment">
+  </form>
+
+{% endblock %}
