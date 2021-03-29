@@ -13,10 +13,13 @@
 Registration has been implemented through superusers / admin only
 
 ### Libraries / dependencies
+- Python v3.9
+- Django v3.1.6
 - WSIWG editor yabwe
 - Bootstrap v4.0
 - Google fonts Libre Baskerville and Dosis
 - Home page by domaso
+- See requirements.txt for other dependencies in my virtual environment (some of these are dev only dependencies, and need to be cleaned up)
 
 ### Run
 - Clone the project
